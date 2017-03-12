@@ -24,6 +24,7 @@
         padding: 5px 0 5px 40px;
         text-align: justify;
         margin-right: 50px;
+        font-weight: 400;
     }
     .myflash-icon{
         font-size: 30px;
@@ -69,7 +70,7 @@
         <i class="icon-close fa fa-times"></i>
     </div>
     <script>
-        $('.myflash-message').animate({top:'20px',opacity:1}).fadeIn('fast').delay(2500).fadeOut();
+        $('.myflash-message').animate({top:'20px',opacity:1}).fadeIn('fast').delay(3000).fadeOut();
         $('.icon-close').click(function(){
             $('.myflash-message').hide();
         });

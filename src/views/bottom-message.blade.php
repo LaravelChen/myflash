@@ -3,7 +3,7 @@
         font-family: Arial, sans-serif;
         padding: 12px 35px;
         border-radius: 4px;
-        font-weight: 500;
+        font-weight: 400;
         position: fixed;
         bottom: 20px;
         right: 20px;
@@ -34,7 +34,7 @@
         <span class="myflash__body">{{Session::get('myflash.message')}}</span>
     </div>
     <script>
-        $('.myflash').hide().fadeIn(500).delay(2500).animate({
+        $('.myflash').hide().fadeIn(500).delay(3000).animate({
             marginRight: "-100%"
         }, 1000, function () {
             $(this).remove();
