@@ -1,5 +1,5 @@
 ##Flash Message
-![image](https://github.com/LaravelChen/myflash/images/example.png)
+![image](https://github.com/LaravelChen/myflash/raw/master/images/example.png)
 
 ##介绍
 > 整个package采用了Laravel内置的```Illuminate\Session\Store```中的一次性请求flash函数.
