@@ -35,6 +35,7 @@
         margin: 10px 0 0;
         color: #8391a5;
         text-align: justify;
+        font-weight: 400;
     }
     .notification__group{
         margin-left: 50px;
