@@ -1,9 +1,11 @@
 #Flash Message For Laravel5
-![image](https://github.com/LaravelChen/myflash/raw/master/images/example.png)
 
 ##介绍
 > 整个package采用了Laravel内置的```Illuminate\Session\Store```中的一次性请求flash函数.
 显示视图的方式有三种，图中可以看到.
+
+##效果图
+![image](https://github.com/LaravelChen/myflash/raw/master/images/example.png)
 
 
 ##安装
