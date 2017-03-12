@@ -1,4 +1,4 @@
-##Flash Message
+#Flash Message For Laravel5
 ![image](https://github.com/LaravelChen/myflash/raw/master/images/example.png)
 
 ##介绍
