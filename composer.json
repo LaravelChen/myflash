@@ -1,0 +1,24 @@
+{
+  "name": "laravelchen/myflash",
+  "description": "cool flash",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "LaravelChen",
+      "email": "848407695@qq.com"
+    }
+  ],
+  "minimum-stability": "dev",
+  "require": {},
+  "require-dev": {
+    "phpunit/phpunit": "5.5.*"
+  },
+  "autoload": {
+    "psr-4": {
+      "LaravelChen\\MyFlash\\": "src/LaravelChen/MyFlash"
+    },
+    "files": [
+      "src/LaravelChen/MyFlash/function.php"
+    ]
+  }
+}
