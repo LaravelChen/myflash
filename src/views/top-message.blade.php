@@ -14,10 +14,12 @@
         box-sizing: border-box;
         opacity: 0;
     }
+
     .myflash_message__group {
         margin-left: 15px;
         position: relative;
     }
+
     .myflash_message__group p {
         font-size: 14px;
         color: #8391a5;
@@ -26,53 +28,62 @@
         margin-right: 50px;
         font-weight: 400;
     }
-    .myflash-icon{
+
+    .myflash-icon {
         font-size: 30px;
         float: left;
     }
-    .myicon-success{
+
+    .myicon-success {
         color: #13ce66;
     }
 
     .myicon-warning {
         color: #f7ba2a;
     }
-    .myicon-error{
+
+    .myicon-error {
         color: #ff4949;
     }
-    .myicon-info{
+
+    .myicon-info {
         color: #50bfff;
     }
-    .icon-close{
+
+    .icon-close {
         position: absolute;
         top: 5px;
         right: 20px;
         color: #d5d5d5;
         font-size: 20px;
     }
-    .icon-close:hover{
+
+    .icon-close:hover {
         cursor: pointer;
     }
 </style>
-<div class="myflash-message" style="z-index: 2109;">
-    <div class="myflash_message__group">
-        @if(Session::get('myflash.type')=='success')
-            <i class="myflash-icon myicon-success fa fa-check-circle-o"></i>
-        @elseif(Session::get('myflash.type')=='warning')
-            <i class="myflash-icon myicon-warning fa fa-exclamation-circle"></i>
-        @elseif(Session::get('myflash.type')=='error')
-            <i class="myflash-icon myicon-error fa fa-times-circle"></i>
-        @elseif(Session::get('myflash.type')=='info')
-            <i class="myflash-icon myicon-info fa fa-info-circle"></i>
-        @endif
+@if(Session::has('myflash.message'))
+    <div class="myflash-message" style="z-index: 2109;">
+        <div class="myflash_message__group">
+            @if(Session::get('myflash.type')=='success')
+                <i class="myflash-icon myicon-success fa fa-check-circle-o"></i>
+            @elseif(Session::get('myflash.type')=='warning')
+                <i class="myflash-icon myicon-warning fa fa-exclamation-circle"></i>
+            @elseif(Session::get('myflash.type')=='error')
+                <i class="myflash-icon myicon-error fa fa-times-circle"></i>
+            @elseif(Session::get('myflash.type')=='info')
+                <i class="myflash-icon myicon-info fa fa-info-circle"></i>
+            @endif
 
-        <p>{{Session::get('myflash.message')}}</p>
-        <i class="icon-close fa fa-times"></i>
+            <p>{{Session::get('myflash.message')}}</p>
+            <i class="icon-close fa fa-times"></i>
+        </div>
+
+        <script>
+            $('.myflash-message').animate({top: '20px', opacity: 1}).fadeIn('fast').delay(3000).fadeOut();
+            $('.icon-close').click(function () {
+                $('.myflash-message').hide();
+            });
+        </script>
     </div>
-    <script>
-        $('.myflash-message').animate({top:'20px',opacity:1}).fadeIn('fast').delay(3000).fadeOut();
-        $('.icon-close').click(function(){
-            $('.myflash-message').hide();
-        });
-    </script>
-</div>
+@endif
