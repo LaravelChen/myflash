@@ -48,7 +48,7 @@ public function index()
 - myflash()->error('邮件已发!请查收邮件!')
 - myflash()->warning('邮件已发!请查收邮件!')
 
-####最后在你的视图中添加```message```视图
+#### 最后在你的视图中添加```message```视图
 ```
 @include('myflash::notification')
 或者
