@@ -1,19 +1,19 @@
-#Flash Message For Laravel5
+# Flash Message For Laravel5
 
-##介绍
+## 介绍
 > 整个package采用了Laravel内置的```Illuminate\Session\Store```中的一次性请求flash函数.
 显示视图的方式有三种，图中可以看到.(**安装的时候最好开启vpn,因为给有人反映国内镜像好像安装不了,所以说用国外的composer的镜像吧!**)
 
-##效果图
+## 效果图
 ![image](https://github.com/LaravelChen/myflash/raw/master/images/example.png)
 
 
-##安装
-####使用composer安装
+## 安装
+#### 使用composer安装
 ```
 composer require laravelchen/myflash
 ```
-####然后在```config/app.php```添加provider和alias
+#### 然后在```config/app.php```添加provider和alias
 ```
 'providers' => [
    LaravelChen\MyFlash\MyFlashProvider::class,
@@ -25,8 +25,8 @@ composer require laravelchen/myflash
 ];
 ```
 
-##用法
-####在redirect重定向之前添加falsh
+## 用法
+#### 在redirect重定向之前添加falsh
 ```
 public function index()
 {
@@ -35,13 +35,13 @@ public function index()
     return Redirect::home();
 }
 ```
-####同时你也可以使用下面这种形式
+#### 同时你也可以使用下面这种形式
 - MyFlash::success('邮件已发!请查收邮件!')
 - MyFlash::info('邮件已发!请查收邮件!')
 - MyFlash::error('邮件已发!请查收邮件!')
 - MyFlash::warning('邮件已发!请查收邮件!')
 
-####或者你可以使用```myflash()```这种辅助函数的形式
+#### 或者你可以使用```myflash()```这种辅助函数的形式
 - myflash('邮件已发!请查收邮件!')
 - myflash()->success('邮件已发!请查收邮件!')
 - myflash()->info('邮件已发!请查收邮件!')
@@ -57,14 +57,14 @@ public function index()
 @include('myflash::bottom-message')
 ```
 
-##注意事项
-####请在你的视图中增加font-awesome和jquery
+## 注意事项
+#### 请在你的视图中增加font-awesome和jquery
 ```
 <link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 <script src="//cdn.bootcss.com/jquery/2.1.0/jquery.min.js"></script>
 ```
 
-##例子
+## 例子
 ```
 <!DOCTYPE html>
 <html>
@@ -82,12 +82,12 @@ public function index()
 </body>
 </html>
 ```
-##自定义
-####如果你想要自定义样式或者其他效果的话可以使用
+## 自定义
+#### 如果你想要自定义样式或者其他效果的话可以使用
 ```
 php artisan vendor:publish
 ```
-#####之后视图文件会出现在你的```resources/views/vendor/myflash```目录下
+##### 之后视图文件会出现在你的```resources/views/vendor/myflash```目录下
 
 > 最后感谢mercuryseries和Jeffrey Way的package!
 
