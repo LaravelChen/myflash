@@ -37,7 +37,8 @@
         text-align: justify;
         font-weight: 400;
     }
-    .notification__group{
+
+    .notification__group {
         margin-left: 50px;
     }
 
@@ -57,10 +58,12 @@
     .icon-warning {
         color: #f7ba2a;
     }
-    .icon-error{
+
+    .icon-error {
         color: #ff4949;
     }
-    .icon-info{
+
+    .icon-info {
         color: #50bfff;
     }
 </style>
@@ -71,23 +74,35 @@
     <div class="myflash-notification" style="top: 16px; z-index: 2015;">
         @if(Session::get('myflash.type')=='success')
             <i class="notification-icon fa fa-check-circle icon-success"></i>
+            <div class="notification__group is-with-icon"><h2 class="notification__title">成功</h2>
+                <div class="notification__content">{{Session::get('myflash.message')}}</div>
+                <i class="notification__closeBtn fa fa-times"></i>
+            </div>
         @elseif(Session::get('myflash.type')=='warning')
             <i class="notification-icon fa fa-exclamation-circle icon-warning"></i>
-            @elseif(Session::get('myflash.type')=='error')
+            <div class="notification__group is-with-icon"><h2 class="notification__title">警告</h2>
+                <div class="notification__content">{{Session::get('myflash.message')}}</div>
+                <i class="notification__closeBtn fa fa-times"></i>
+            </div>
+        @elseif(Session::get('myflash.type')=='error')
             <i class="notification-icon  fa fa-times-circle icon-error"></i>
-            @elseif(Session::get('myflash.type')=='info')
+            <div class="notification__group is-with-icon"><h2 class="notification__title">错误</h2>
+                <div class="notification__content">{{Session::get('myflash.message')}}</div>
+                <i class="notification__closeBtn fa fa-times"></i>
+            </div>
+        @elseif(Session::get('myflash.type')=='info')
             <i class="notification-icon fa fa-info-circle icon-info"></i>
+            <div class="notification__group is-with-icon"><h2 class="notification__title">信息</h2>
+                <div class="notification__content">{{Session::get('myflash.message')}}</div>
+                <i class="notification__closeBtn fa fa-times"></i>
+            </div>
         @endif
 
-        <div class="notification__group is-with-icon"><h2 class="notification__title">成功</h2>
-            <div class="notification__content">{{Session::get('myflash.message')}}</div>
-            <i class="notification__closeBtn fa fa-times"></i>
-        </div>
     </div>
 
     <script>
-        $('.myflash-notification').animate({right:'16px',opacity:1}).fadeIn('fast').delay(3000).fadeOut(500);
-        $('.notification__closeBtn').click(function(){
+        $('.myflash-notification').animate({right: '16px', opacity: 1}).fadeIn('fast').delay(3000).fadeOut(500);
+        $('.notification__closeBtn').click(function () {
             $('.myflash-notification').hide();
         });
     </script>
