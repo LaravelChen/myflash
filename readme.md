@@ -2,7 +2,7 @@
 
 ##介绍
 > 整个package采用了Laravel内置的```Illuminate\Session\Store```中的一次性请求flash函数.
-显示视图的方式有三种，图中可以看到.
+显示视图的方式有三种，图中可以看到.(安装的时候最好开启vpn,因为给有人反映国内镜像好像安装不了,所以说用国外的composer的镜像吧!)
 
 ##效果图
 ![image](https://github.com/LaravelChen/myflash/raw/master/images/example.png)
